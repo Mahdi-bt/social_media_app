@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: AppRouter.onGenerateRoute,
       initialRoute: LoginScreen.routeName,
       theme: lightTheme,
-      home: const HomeScreen(),
     );
   }
 }
