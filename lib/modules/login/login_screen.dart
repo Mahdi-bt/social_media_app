@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../shared/widgets/InputFormField.dart';
+import 'package:social_media_app/shared/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = '/login';
@@ -79,22 +78,77 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 55,
-                    width: 230,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(28),
+                customButton(
+                  borderRadius: 28,
+                  colors: Colors.lightBlue,
+                  height: 55,
+                  width: 230,
+                  text: 'LOG IN',
+                  function: () {
+                    print('Typed');
+                  },
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Or Connect using',
+                  style: Theme.of(context).textTheme.caption!.copyWith(
+                        color: Colors.grey,
+                        fontSize: 14,
+                      ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    customButton(
+                      borderRadius: 15,
+                      height: 50,
+                      width: 190,
+                      colors: Colors.blue,
+                      text: 'Facebook',
+                      iconPath: 'assets/images/facebook.svg',
+                      function: () {},
                     ),
-                    child: Center(
-                        child: Text('LOG IN',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.white))),
-                  ),
+                    customButton(
+                      borderRadius: 15,
+                      height: 50,
+                      width: 190,
+                      colors: Colors.redAccent,
+                      text: 'Google',
+                      iconPath: 'assets/images/google.svg',
+                      function: () {},
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 35,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4!
+                          .copyWith(fontWeight: FontWeight.w500),
+                    ),
+                    TextButton(
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/register'),
+                      child: Text(
+                        'Sign Up',
+                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.lightBlue,
+                            ),
+                      ),
+                    )
+                  ],
                 ),
               ],
             ),
