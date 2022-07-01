@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/layout/home_layout.dart';
 import 'package:social_media_app/modules/screens.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return HomeScreen.route();
+        return HomeLayout.route();
       case '/login':
         return LoginScreen.route();
       case '/register':
